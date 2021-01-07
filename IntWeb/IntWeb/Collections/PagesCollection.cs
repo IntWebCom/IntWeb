@@ -11,7 +11,9 @@ namespace IntWeb.Framework.Collections
         IEnumerator IEnumerable.GetEnumerator()
         {
             for (var index = 0; index < pages.Count; index++)
+            {
                 yield return pages[index];
+            }
         }
     }
 }

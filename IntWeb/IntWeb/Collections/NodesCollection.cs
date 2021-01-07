@@ -12,7 +12,9 @@ namespace IntWeb.Framework.Collections
         IEnumerator IEnumerable.GetEnumerator()
         {
             for (var index = 0; index < nodes.Count; index++)
+            {
                 yield return nodes[index];
+            }
         }
 
         public T GetById<T>(long identifier) where T : Node

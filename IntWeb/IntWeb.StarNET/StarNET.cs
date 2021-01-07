@@ -8,7 +8,7 @@ namespace IntWeb.StarNET
 
         public static void LoadDefaultContext()
         {
-            Application = new Application("main", "localhost");
+            Application = new Application("main");
         }
     }
 }

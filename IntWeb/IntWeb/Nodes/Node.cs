@@ -8,7 +8,9 @@ namespace IntWeb.Framework.Nodes
     {
         public NodesCollection Nodes { get; private set; } = new NodesCollection();
 
-        public long Identifier { get; private set; } = GenerateNewIdentifier();
+        public long Identifier { get; set; } = GenerateNewIdentifier();
+
+        public string ContentText { get; private set; } = string.Empty;
 
         public string GetIdentifierLabel()
         {
