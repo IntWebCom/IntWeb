@@ -1,10 +1,10 @@
-﻿namespace IntWeb.StartNET
+﻿namespace IntWeb.StarNET
 {
     class Program
     {
         static void Main()
         {
-            StartNET.LoadDefaultContext();
+            StarNET.LoadDefaultContext();
         }
     }
 }

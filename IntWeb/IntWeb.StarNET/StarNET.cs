@@ -1,8 +1,8 @@
 ﻿using IntWeb.Framework;
 
-namespace IntWeb.StartNET
+namespace IntWeb.StarNET
 {
-    public static class StartNET
+    public static class StarNET
     {
         public static Application Application { get; private set; }
 

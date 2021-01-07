@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntWeb.Framework", "IntWeb\IntWeb.Framework.csproj", "{7AE7183E-A969-4528-A04F-D5CE099C58D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntWeb.Framework", "IntWeb\IntWeb.Framework.csproj", "{7AE7183E-A969-4528-A04F-D5CE099C58D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntWeb.StartNET", "IntWeb.StartNET\IntWeb.StartNET.csproj", "{058B4AEB-7DF1-4847-AF0C-04FE864B505E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntWeb.StarNET", "IntWeb.StarNET\IntWeb.StarNET.csproj", "{058B4AEB-7DF1-4847-AF0C-04FE864B505E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
