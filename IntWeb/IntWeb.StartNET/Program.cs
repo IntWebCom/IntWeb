@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace IntWeb.StartNET
+﻿namespace IntWeb.StartNET
 {
     class Program
     {

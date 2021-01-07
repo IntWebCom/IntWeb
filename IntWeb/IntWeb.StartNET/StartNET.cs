@@ -8,7 +8,7 @@ namespace IntWeb.StartNET
 
         public static void LoadDefaultContext()
         {
-            Application = new Application("localhost");
+            Application = new Application("main", "localhost");
         }
     }
 }

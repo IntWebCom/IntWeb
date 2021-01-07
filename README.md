@@ -1,2 +1,2 @@
 # IntWeb
-- Issue Tracker: https://gitlab.com/internalwebcommunications/intweb/
+- Issue Tracker: https://gitlab.com/intwebcom/intweb/
