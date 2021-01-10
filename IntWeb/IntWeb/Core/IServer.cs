@@ -2,5 +2,8 @@
 {
     public interface IServer
     {
+        void StartListen();
+
+        void StopListen();
     }
 }

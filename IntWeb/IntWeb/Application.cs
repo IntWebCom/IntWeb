@@ -1,8 +1,11 @@
 ﻿using IntWeb.Framework.Collections;
 using IntWeb.Framework.Core.WebServer;
 using IntWeb.Framework.Core.WebSocketServer;
+using IntWeb.Framework.Defaults;
+using IntWeb.Framework.Enums;
 using IntWeb.Framework.Managers;
-using System;
+using IntWeb.Framework.Threading;
+using System.Text;
 
 namespace IntWeb.Framework
 {
@@ -18,7 +21,13 @@ namespace IntWeb.Framework
 
         public RoutesCollection Routes { get; private set; } = new RoutesCollection();
 
+        public SourcesCollection Sources { get; private set; } = new SourcesCollection();
+
+        public Encoding Encoding { get; set; } = Encoding.UTF8;
+
         public DirectoryManager DirectoryManager { get; private set; }
+
+        public ThreadsWorker ThreadsWorker { get; private set; } = new ThreadsWorker();
 
         public Application(string name)
         {
@@ -26,16 +35,39 @@ namespace IntWeb.Framework
 
             DirectoryManager = new DirectoryManager(this);
             DirectoryManager.InitializeApplicationDirectory();
+
+            HttpWebServer = new HttpWebServer(this);
         }
 
-        public void Bind(string domainPrefix, string webSocketServerAddress, int webServerPort, int webSocketServerPort)
+        public void Bind(
+            string domainPrefix, 
+            string webSocketServerAddress, 
+            int webServerPort = NetworkDefaults.DefaultWebServerPort, 
+            int webSocketServerPort = NetworkDefaults.DefaultWebSocketServerPort)
         {
             Bind(new string[] { domainPrefix }, webSocketServerAddress, webServerPort, webSocketServerPort);
         }
 
-        public void Bind(string[] domainPrefixes, string webSocketServerAddress, int webServerPort, int webSocketServerPort)
+        public void Bind(
+            string[] domainPrefixes, 
+            string webSocketServerAddress, 
+            int webServerPort = NetworkDefaults.DefaultWebServerPort, 
+            int webSocketServerPort = NetworkDefaults.DefaultWebSocketServerPort)
         {
-            throw new NotImplementedException();
+            HttpWebServer.UseConnectionOn(domainPrefixes, webServerPort);
+            ThreadsWorker.StartInThread(HttpWebServer.StartListen);
+
+            //TODO WebSocketServer implementation
+        }
+
+        public void IncludeStylesheetFile(string fileUrl)
+        {
+            Sources.SetSource(SourceType.Stylesheet, fileUrl);
+        }
+
+        public void IncludeJavaScriptFile(string fileUrl)
+        {
+            Sources.SetSource(SourceType.JavaScript, fileUrl);
         }
     }
 }

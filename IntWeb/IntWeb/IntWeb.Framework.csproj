@@ -5,4 +5,8 @@
     <AssemblyName>IntWeb.Framework</AssemblyName>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Core\Common\" />
+  </ItemGroup>
+
 </Project>
