@@ -6,14 +6,11 @@ namespace IntWeb.Framework.Collections
 {
     public class PagesCollection : IEnumerable
     {
-        List<Page> pages = new List<Page>();
+        readonly List<Page> pages = new List<Page>();
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            for (var index = 0; index < pages.Count; index++)
-            {
-                yield return pages[index];
-            }
+            return pages.GetEnumerator();
         }
     }
 }

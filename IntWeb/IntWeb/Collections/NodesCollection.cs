@@ -7,14 +7,11 @@ namespace IntWeb.Framework.Collections
 {
     public class NodesCollection : IEnumerable
     {
-        List<Node> nodes = new List<Node>();
+        readonly List<Node> nodes = new List<Node>();
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            for (var index = 0; index < nodes.Count; index++)
-            {
-                yield return nodes[index];
-            }
+            return nodes.GetEnumerator();
         }
 
         public T GetById<T>(long identifier) where T : Node
